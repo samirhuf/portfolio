@@ -16,6 +16,7 @@ st.header('Time Updated Till: '+str(df_time['Time'].iloc[0]))
 def highlight_profit(s):
     return ['background-color: #7F945B']*len(s) if s.GainToday>0 else ['background-color: #DE839B']*len(s)
 st.dataframe(df_inventory.style.apply(highlight_profit, axis=1))
+st.dataframe(df_inventory.style.format(precision=2))
 st.markdown('<style>body{background-color: #f0f2f6;}</style>', unsafe_allow_html=True)
 st.subheader('Total Gain Today: ' + str(total_gain_today))
 st.subheader('Total Gain: ' + str(total_gain))

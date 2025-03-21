@@ -8,9 +8,9 @@ file_1=path_string_1+'MobileDisplayEquityInventory.csv'
 file_time=path_string_1+'current_time.csv'
 df_inventory=pd.read_csv(file_1)
 df_inventory.rename(columns={'Today Gain': 'GainToday'}, inplace=True)
-total_gain_today=round(df_inventory['GainToday'].sum())
-total_gain=round(df_inventory['Total Gain'].sum())
-current_investment=df_inventory['Current Investment'].sum()
+total_gain_today=round(df_inventory['GainToday'].sum()/100000,2)
+total_gain=round(df_inventory['Total Gain'].sum()/100000,2)
+current_investment=round(df_inventory['Current Investment'].sum()/100000)
 df_time=pd.read_csv(file_time)
 st.write('Time Updated Till: '+str(df_time['Time'].iloc[0]))
 def highlight_profit(s):
@@ -24,3 +24,4 @@ st.dataframe(df_styled)
 #st.markdown('<style>body{background-color: #f0f2f6;}</style>', unsafe_allow_html=True)
 st.subheader('Total Gain Today: ' + str(total_gain_today))
 st.subheader('Total Gain: ' + str(total_gain))
+st.subheader('Current Investment: ' + str(current_investment))

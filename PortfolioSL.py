@@ -16,7 +16,7 @@ st.write('Time Updated Till: '+str(df_time['Time'].iloc[0]))
 m1, m2, m3, m4, m5 = st.columns((1,1,1,1,1))
 m1.write('')
 m2.metric('Total Gain Today: ', value=str(total_gain_today)+' Lakhs')
-m3.metric('Total Gain: ', value=str(total_gain)+)
+m3.metric('Total Gain: ', value=str(total_gain)+' Lakhs')
 m4.metric('Current Investment: ', value=str(current_investment)+' Lakhs')
 m5.write('')
 def highlight_profit(s):

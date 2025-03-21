@@ -13,7 +13,7 @@ current_investment=df_inventory['Current Investment'].sum()
 df_time=pd.read_csv(file_time)
 st.header('Time Updated Till: '+str(df_time['Time'].iloc[0]))
 def highlight_profit(s):
-    return ['background-color: green']*len(s) if s.LTP>200 else ['background-color: red']*len(s)
+    return ['background-color: green']*len(s) if s.['Today Gain']>0 else ['background-color: red']*len(s)
 st.dataframe(df_inventory.style.apply(highlight_profit, axis=1))
 st.markdown('<style>body{background-color: #f0f2f6;}</style>', unsafe_allow_html=True)
 st.subheader('Total Gain Today: ' + str(total_gain_today))

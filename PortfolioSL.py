@@ -18,6 +18,7 @@ def highlight_profit(s):
 df_styled = (df_inventory.style.
 format(precision=2).
 apply(highlight_profit, axis=1))
+st.dataframe(df_styled)
 # st.dataframe(df_inventory.style.apply(highlight_profit, axis=1))
 # st.dataframe(df_inventory.style.format(precision=2))
 #st.markdown('<style>body{background-color: #f0f2f6;}</style>', unsafe_allow_html=True)

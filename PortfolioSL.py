@@ -18,7 +18,7 @@ styled_df = df_inventory.style.set_table_styles([
         {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%')]},
         {'selector': 'th, td', 'props': [('border', '1px solid #ddd'), ('padding', '8px')]}
     ])
-st.dataframe(styled_df)
+st.dataframe(styled_df.round(2))
 st.markdown('<style>body{background-color: #f0f2f6;}</style>', unsafe_allow_html=True)
 st.subheader('Total Gain Today: ' + str(total_gain_today))
 st.subheader('Total Gain: ' + str(total_gain))

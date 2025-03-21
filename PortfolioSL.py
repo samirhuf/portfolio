@@ -13,6 +13,12 @@ total_gain=round(df_inventory['Total Gain'].sum()/100000,2)
 current_investment=round(df_inventory['Current Investment'].sum()/100000)
 df_time=pd.read_csv(file_time)
 st.write('Time Updated Till: '+str(df_time['Time'].iloc[0]))
+m1, m2, m3, m4, m5 = st.columns((1,1,1,1,1))
+m1.write('')
+m2.metric('Total Gain Today: ', value=total_gain_today+' Lakhs')
+m3.metric('Total Gain: ', value=total_gain+' Lakhs')
+m4.metric('Current Investment: ', value=current_investment+' Lakhs')
+m5.write('')
 def highlight_profit(s):
     return ['background-color: #ACD6A7']*len(s) if s.GainToday>0 else ['background-color: #DC6D6D']*len(s)
 df_styled = (df_inventory.style.

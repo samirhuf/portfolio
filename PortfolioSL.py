@@ -8,7 +8,7 @@ file_1=path_string_1+'MobileDisplayEquityInventory.csv'
 file_time=path_string_1+'current_time.csv'
 df_inventory=pd.read_csv(file_1)
 df_inventory.rename(columns={'Today Gain': 'GainToday'}, inplace=True)
-total_gain_today=df_inventory['Today Gain'].sum()
+total_gain_today=df_inventory['GainToday'].sum()
 total_gain=df_inventory['Total Gain'].sum()
 current_investment=df_inventory['Current Investment'].sum()
 df_time=pd.read_csv(file_time)

@@ -18,6 +18,12 @@ total_current_investment=round(df_inventory['Current Investment'].sum()/100000)
 df_time=pd.read_csv(file_time)
 st.write('Time Updated Till: '+str(df_time['Time'].iloc[0]))
 df_asset=df_inventory[df_inventory['Asset Type']==asset_type]
+if asset_type=='Stocks & ETFs':
+    df_asset.drop('Asset', axis=1, inplace=True)
+else:
+    df_asset.drop('Ticker', axis=1, inplace=True)
+
+
 asset_gain_today=round(df_asset['GainToday'].sum()/100000,2)
 asset_total_gain=round(df_asset['Total Gain'].sum()/100000,2)
 asset_current_investment=round(df_asset['Current Investment'].sum()/100000)

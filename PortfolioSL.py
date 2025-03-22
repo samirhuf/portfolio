@@ -8,6 +8,7 @@ file_1=path_string_1+'TotalBatchInventory.csv'
 file_time=path_string_1+'current_time.csv'
 file_asset_types=path_string_1+'BatchAssetTypes.csv'
 df_asset_types=pd.read_csv(file_asset_types)
+df_asset_types.drop('ID', axis=1, inplace=True)
 asset_type = st.selectbox('Choose Type of Asset', df_asset_types, help = 'Filter report to show Only One Asset')
 df_inventory=pd.read_csv(file_1)
 df_inventory.rename(columns={'Today Gain': 'GainToday'}, inplace=True)

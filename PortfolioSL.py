@@ -27,12 +27,12 @@ else:
 asset_gain_today=round(df_asset['GainToday'].sum()/100000,2)
 asset_total_gain=round(df_asset['Total Gain'].sum()/100000,2)
 asset_current_investment=round(df_asset['Current Investment'].sum()/100000)
-m1,m2, m3, m4,m5  = st.columns((0.3,1.5,1.5,1.5,0.3))
-m1.write('')
+m2, m3, m4  = st.columns((1.7,1.7,1.7))
+#m1.write('')
 m2.metric('Asset Gain Today: ', value=str(asset_gain_today)+' Lakhs',border=True)
 m3.metric('Asset Total Gain: ', value=str(asset_total_gain)+' Lakhs',border=True)
 m4.metric('Asset Current Investment: ', value=str(asset_current_investment)+' Lakhs',border=True)
-m5.write('')
+#m5.write('')
 def highlight_profit(s):
     return ['background-color: #ACD6A7']*len(s) if s.GainToday>0 else ['background-color: #DC6D6D']*len(s)
 df_styled = (df_asset.style.
@@ -40,8 +40,8 @@ format(precision=2).
 apply(highlight_profit, axis=1))
 st.dataframe(df_styled)
 
-m6,m7,m8,m9,m10=st.columns((0.3,1.5,1.5,1.5,0.3))
-m6.write('')
+m7,m8,m9=st.columns((1.7,1.7,1.7))
+
 m7.metric('Total Gain Today: ', value=str(total_gain_today)+' Lakhs',border=True)
 m8.metric('Total Gain: ', value=str(total_gain)+' Lakhs',border=True)
 m9.metric('Total Current Investment: ', value=str(total_current_investment)+' Lakhs',border=True)

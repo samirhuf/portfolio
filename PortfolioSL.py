@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import datetime
 path_string_1='./'
+st. cache_data. clear()
 st.title('Portfolio Summary-Samir Shah')
 file_1=path_string_1+'TotalBatchInventory.csv'
 file_time=path_string_1+'current_time.csv'
